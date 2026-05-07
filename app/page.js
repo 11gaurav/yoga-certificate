@@ -160,7 +160,8 @@ const mainStyle = {
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   overflow: "hidden",
-  padding: "20px"
+  padding: "20px",
+  position: "relative"
 };
 
 const boxStyle = {
@@ -168,9 +169,11 @@ const boxStyle = {
   maxWidth: "420px",
   padding: "35px",
   borderRadius: "20px",
-  background: "rgba(0,0,0,0.45)",
-  backdropFilter: "blur(10px)",
-  boxShadow: "0 0 20px rgba(0,0,0,0.4)"
+  background: "rgba(0,0,0,0.75)",
+  backdropFilter: "blur(8px)",
+  boxShadow: "0 0 25px rgba(0,0,0,0.5)",
+  position: "relative",
+  zIndex: 10
 };
 
 const inputStyle = {
@@ -183,7 +186,8 @@ const inputStyle = {
   background: "#ffffff",
   color: "#000000",
   outline: "none",
-  boxSizing: "border-box"
+  boxSizing: "border-box",
+  background: "rgba(255,255,255,0.95)"
 };
 
 const btnStyle = {
