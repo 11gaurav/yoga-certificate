@@ -161,7 +161,7 @@ const mainStyle = {
   backgroundRepeat: "no-repeat",
   overflow: "hidden",
   padding: "20px",
-  paddingTop: "220px",
+  paddingTop: "250px",
 };
 
 const boxStyle = {
