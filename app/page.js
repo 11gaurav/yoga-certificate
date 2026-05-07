@@ -154,14 +154,14 @@ const mainStyle = {
   width: "100%",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center",
+  alignItems: "flex-start",
   backgroundImage: "url('/yoga-bg.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   overflow: "hidden",
   padding: "20px",
-  position: "relative"
+  paddingTop: "220px",
 };
 
 const boxStyle = {
