@@ -54,7 +54,7 @@ export default function Home() {
     
     const bg = new Image();
     
-    bg.src = "/certificate-bg.jpg";
+    bg.src = "/certificate_bg.jpg";
     
     bg.onload = () => {
     
