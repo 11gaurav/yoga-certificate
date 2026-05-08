@@ -47,65 +47,108 @@ export default function Home() {
   function generateCertificate(name){
 
     const canvas = document.createElement("canvas");
-
     canvas.width = 1400;
     canvas.height = 1000;
-
+    
     const ctx = canvas.getContext("2d");
-
-    // Background
-    let bg = ctx.createLinearGradient(0,0,1400,1000);
-
-    bg.addColorStop(0,"#ecfdf5");
-    bg.addColorStop(1,"#bbf7d0");
-
-    ctx.fillStyle = bg;
-    ctx.fillRect(0,0,1400,1000);
-
-    // Border
-    ctx.strokeStyle = "#166534";
-    ctx.lineWidth = 16;
-    ctx.strokeRect(30,30,1340,940);
-
-    // Om Symbol
-    ctx.fillStyle = "#166534";
-    ctx.font = "70px serif";
-    ctx.textAlign = "center";
-    ctx.fillText("ॐ",700,120);
-
-    // Title
-    ctx.fillStyle = "#14532d";
-    ctx.font = "bold 58px Georgia";
-    ctx.fillText("YOGA CERTIFICATE",700,220);
-
-    ctx.font = "30px Arial";
-    ctx.fillText("Awarded To",700,320);
-
-    // Name
-    ctx.font = "bold 68px cursive";
-    ctx.fillText(name,700,450);
-
-    // Description
-    ctx.font = "28px Arial";
-    ctx.fillText("For Successfully Participating",700,560);
-    ctx.fillText("In International Yoga Session",700,610);
-
-    // Yoga Icon
-    ctx.font = "90px serif";
-    ctx.fillText("🧘",700,760);
-
-    // Footer
-    ctx.font = "22px Arial";
-    ctx.fillText(new Date().toLocaleDateString(),1150,930);
-
-    // Download
-    const link = document.createElement("a");
-
-    link.download = "yoga-certificate.png";
-    link.href = canvas.toDataURL();
-
-    link.click();
-  }
+    
+    const bg = new Image();
+    
+    bg.src = "/certificate-bg.jpg";
+    
+    bg.onload = () => {
+    
+      // Draw Background
+      ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+    
+      // Overlay for readability
+      ctx.fillStyle = "rgba(255,255,255,0.75)";
+      ctx.fillRect(80, 80, 1240, 840);
+    
+      // Heading
+      ctx.fillStyle = "#9a3412";
+      ctx.font = "bold 54px 'Noto Sans Devanagari'";
+      ctx.textAlign = "center";
+    
+      ctx.fillText("अंतर्राष्ट्रीय योग दिवस 2026", 700, 140);
+    
+      // Sub Heading
+      ctx.fillStyle = "#14532d";
+      ctx.font = "bold 40px 'Noto Sans Devanagari'";
+    
+      ctx.fillText("प्रशस्ति प्रमाण पत्र", 700, 210);
+    
+      // Main Text
+      ctx.fillStyle = "#1f2937";
+      ctx.font = "32px 'Noto Sans Devanagari'";
+      ctx.textAlign = "center";
+    
+      ctx.fillText("यह प्रमाणित किया जाता है कि", 700, 320);
+    
+      // Dynamic Name
+      ctx.fillStyle = "#7c2d12";
+      ctx.font = "bold 48px 'Noto Sans Devanagari'";
+    
+      ctx.fillText(name, 700, 410);
+    
+      // Decorative Line
+      ctx.beginPath();
+      ctx.moveTo(420, 440);
+      ctx.lineTo(980, 440);
+      ctx.strokeStyle = "#7c2d12";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    
+      // Paragraph
+      ctx.fillStyle = "#111827";
+      ctx.font = "30px 'Noto Sans Devanagari'";
+    
+      const lines = [
+        "ने अंतर्राष्ट्रीय योग दिवस 2026 के अवसर पर",
+        "विवेकानन्द केन्द्र, जोधपुर द्वारा आयोजित योग कार्यक्रम में",
+        "उत्साहपूर्वक सहभागिता की।",
+        "",
+        "इन्होंने योगाभ्यास, प्राणायाम एवं स्वस्थ जीवन शैली",
+        "के संदेश को आत्मसात करते हुए कार्यक्रम को सफल",
+        "बनाने में अपना महत्वपूर्ण योगदान दिया।",
+        "",
+        "उनकी सक्रिय सहभागिता एवं समर्पण सराहनीय है।",
+        "",
+        "हम उनके उज्ज्वल, स्वस्थ एवं अनुशासित जीवन",
+        "की मंगलकामना करते हैं।"
+      ];
+    
+      let y = 520;
+    
+      lines.forEach((line) => {
+        ctx.fillText(line, 700, y);
+        y += 48;
+      });
+    
+      // Footer
+      ctx.font = "28px 'Noto Sans Devanagari'";
+      ctx.fillStyle = "#374151";
+    
+      ctx.fillText("विवेकानन्द केन्द्र, जोधपुर", 250, 900);
+    
+      ctx.fillText("अंतर्राष्ट्रीय योग दिवस 2026", 1100, 900);
+    
+      // Date
+      const date = new Date().toLocaleDateString("hi-IN");
+    
+      ctx.font = "24px 'Noto Sans Devanagari'";
+    
+      ctx.fillText("दिनांक : " + date, 700, 950);
+    
+      // Download
+      const link = document.createElement("a");
+    
+      link.download = `${name}-certificate.png`;
+    
+      link.href = canvas.toDataURL("image/png");
+    
+      link.click();
+    };
 
   return (
 
