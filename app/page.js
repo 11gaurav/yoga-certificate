@@ -1,5 +1,7 @@
 "use client";
-
+// const FORM_ACTIVE = false;
+const FORM_ACTIVE =
+  new Date() >= new Date("2026-06-21T00:00:00");
 import { useState } from "react";
 
 export default function Home() {
@@ -193,14 +195,15 @@ export default function Home() {
     <div style={mainStyle}>
 
       <div style={boxStyle}>
-
+      {FORM_ACTIVE ? (
+          <>
         <h1 style={{
           textAlign:"center",
           color:"#ffffff"
         }}>
           🧘 Yoga Certificate
         </h1>
-
+        
         <input
           type="text"
           placeholder="Enter Full Name"
@@ -223,7 +226,25 @@ export default function Home() {
         >
           {loading ? "Please Wait..." : "Submit & Download"}
         </button>
+        </>
+) : (
 
+  <div
+    style={{
+      textAlign: "center",
+      color: "#fff",
+      fontSize: "24px",
+      lineHeight: "1.8",
+      fontWeight: "bold",
+      padding: "30px"
+    }}
+  >
+    यह फॉर्म 21 जून 2026 को सक्रिय होगा।
+    <br />
+    कृपया पुनः पधारें।
+  </div>
+
+)}
       </div>
 
     </div>
