@@ -168,7 +168,7 @@ export default function Home() {
       ctx.drawImage(bg, 0, 0);
   
       // User Name
-      ctx.font = "bold 54px 'Noto Sans Devanagari'";
+      ctx.font = "bold 45px 'Noto Sans Devanagari'";
       ctx.fillStyle = "#0d2a7a";
       ctx.textAlign = "center";
       
@@ -176,7 +176,7 @@ export default function Home() {
       ctx.shadowBlur = 2;
   
       // Adjust X and Y after testing
-      ctx.fillText(name, 875, 590);
+      ctx.fillText(name, 825, 608);
   
       const link = document.createElement("a");
   
