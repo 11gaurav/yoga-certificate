@@ -158,7 +158,7 @@ export default function Home() {
   
     const bg = new Image();
   
-    bg.src = "/yoga_certificate_2026.jpg";
+    bg.src = "/certificate_bg.jpg";
   
     bg.onload = () => {
   
