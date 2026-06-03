@@ -176,7 +176,7 @@ export default function Home() {
       ctx.shadowBlur = 2;
   
       // Adjust X and Y after testing
-      ctx.fillText(name, 835, 608);
+      ctx.fillText(name, 855, 608);
   
       const link = document.createElement("a");
   
