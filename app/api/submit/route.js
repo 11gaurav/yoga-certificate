@@ -16,7 +16,12 @@ export async function POST(req) {
         message: "Invalid Name"
       });
     }
-
+    if (name.length > 22) {
+      return Response.json({
+        success: false,
+        message: "Name is too long"
+      });
+    }
     // Mobile validation
     if (!/^\d{10}$/.test(mobile)) {
       return Response.json({
