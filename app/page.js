@@ -163,6 +163,7 @@ const mainStyle = {
 const boxStyle = {
   width: "100%",
   maxWidth: "420px",
+  marginTop:"30px",
   padding: "35px",
   borderRadius: "20px",
   background: "rgba(0,0,0,0.75)",
