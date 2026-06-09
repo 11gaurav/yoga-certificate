@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export default function Home() {
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [loading, setLoading] = useState(false);
@@ -86,7 +87,7 @@ export default function Home() {
 
   return (
 
-    <div style={mainStyle}>
+    <div style={{...mainStyle,paddingTop: isMobile ? "380px" : "250px"}}>
 
       <div style={boxStyle}>
       {FORM_ACTIVE ? (
@@ -156,8 +157,7 @@ const mainStyle = {
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   overflow: "hidden",
-  padding: "20px",
-  paddingTop: window.innerWidth < 768 ? "380px" : "250px"
+  padding: "20px"
 };
 
 const boxStyle = {
